@@ -34,7 +34,10 @@
 
     --radius: 0.5rem;
 
-    --header-height: 58px;
+    --header-height: 70px;
+    --sitemaxw: 2560px;
+    --sidebar-width: 18.75rem;
+
   }
 
   .dark {
@@ -65,6 +68,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+
   }
 }
 
@@ -81,4 +85,17 @@
     @apply text-[#FB7185] font-extrabold text-2xl
   }
 
+  .mxw {
+    @apply max-w-[var(--sitemaxw)];
+  }
+
+  .sidebar {
+    @apply w-[var(--sidebar-width)] h-min pt-[var(--header-height)]
+  }
 }
+
+/* .sidbar__container ul li {
+  padding-inline: .5rem;
+  border-inline-start: 1px;
+  margin-inline-start: .5rem;
+} */

@@ -4,11 +4,67 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="max-w-7xl mx-auto min-h-screen">
-    <div>
-      <h1 class="text-4xl font-bold">hello there</h1>
-      <div class="bg-primary text-primary-foreground">Hello</div>
-      <div class="bg-warning text-warning-foreground">Hello</div>
+  <main class="mxw">
+    <!-- left panel -->
+    <!-- <div
+      class="hidden bg-red-300 lg:block fixed z-20 inset-0 top-[3.8125rem] left-[max(0px,calc(50%-45rem))] right-auto w-[19rem] pb-10 pl-8 pr-6 overflow-y-auto"
+    >
+      <h2>left</h2>
+    </div> -->
+    <!-- right panel -->
+
+    <!-- left panel -->
+    <div class="sidbar__container">
+      <div
+        class="hidden sm:block fixed inset-0 sidebar h-screen border-e-[1px] px-4"
+      >
+        <ul class="p-1">
+          <li class="">
+            <details class="astro-f4kmpaoc">
+              <summary class="flex items-center justify-between ps-0.5 pe-0.5">
+                <div class="group-label astro-f4kmpaoc">
+                  <span class="font-bold">Start Here</span>
+                </div>
+                <svg
+                  aria-hidden="true"
+                  class="caret astro-f4kmpaoc astro-3zixussu"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  ><path
+                    d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
+                  ></path></svg
+                >
+              </summary>
+              <ul class="">
+                <li class="border-s">
+                  <a href="/en/getting-started/" class="astro-f4kmpaoc">
+                    <span class="astro-f4kmpaoc">Getting Started</span>
+                  </a>
+                </li><li class="border-s">
+                  <a href="/en/install/auto/" class="astro-f4kmpaoc">
+                    <span class="astro-f4kmpaoc">Installation</span>
+                  </a>
+                </li><li class="border-s">
+                  <a
+                    href="/en/editor-setup/"
+                    aria-current="page"
+                    class="astro-f4kmpaoc"
+                  >
+                    <span class="astro-f4kmpaoc">Editor Setup</span>
+                  </a>
+                </li><li class="border-s">
+                  <a href="/en/upgrade-astro/" class="astro-f4kmpaoc">
+                    <span class="astro-f4kmpaoc">Upgrade Astro</span>
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <!-- right panel -->
     </div>
   </main>
 </Layout>
