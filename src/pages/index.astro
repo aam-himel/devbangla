@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import { menuItems } from "@/utils/menuitems";
+const { html: htmlCourse } = menuItems;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="ডেভবাংলা">
   <main class="mxw">
     <!-- left panel -->
     <!-- <div
@@ -16,52 +18,44 @@ import Card from "../components/Card.astro";
     <!-- left panel -->
     <div class="sidbar__container">
       <div
-        class="hidden sm:block fixed inset-0 sidebar h-screen border-e-[1px] px-4"
+        class="hidden sm:block fixed inset-0 sidebar h-screen border-e-[1px] px-4 overflow-y-auto scrollbar auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded dark:scrollbar-track:!bg-slate-500/[0.16] dark:scrollbar-thumb:!bg-slate-500/50 lg:supports-scrollbars:pr-2"
       >
-        <ul class="p-1">
-          <li class="">
-            <details class="astro-f4kmpaoc">
-              <summary class="flex items-center justify-between ps-0.5 pe-0.5">
-                <div class="group-label astro-f4kmpaoc">
-                  <span class="font-bold">Start Here</span>
-                </div>
-                <svg
-                  aria-hidden="true"
-                  class="caret astro-f4kmpaoc astro-3zixussu"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  ><path
-                    d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
-                  ></path></svg
-                >
-              </summary>
-              <ul class="">
-                <li class="border-s">
-                  <a href="/en/getting-started/" class="astro-f4kmpaoc">
-                    <span class="astro-f4kmpaoc">Getting Started</span>
-                  </a>
-                </li><li class="border-s">
-                  <a href="/en/install/auto/" class="astro-f4kmpaoc">
-                    <span class="astro-f4kmpaoc">Installation</span>
-                  </a>
-                </li><li class="border-s">
-                  <a
-                    href="/en/editor-setup/"
-                    aria-current="page"
-                    class="astro-f4kmpaoc"
-                  >
-                    <span class="astro-f4kmpaoc">Editor Setup</span>
-                  </a>
-                </li><li class="border-s">
-                  <a href="/en/upgrade-astro/" class="astro-f4kmpaoc">
-                    <span class="astro-f4kmpaoc">Upgrade Astro</span>
-                  </a>
-                </li>
-              </ul>
-            </details>
-          </li>
+        <h2 class="text-xl font-bold py-3 ps-3">এইচটিএমএল (HTML)</h2>
+        <ul class="p-1 outer-list">
+          {
+            htmlCourse.map((section) => (
+              <li class=" mb-3">
+                <details open>
+                  <summary class="flex items-center justify-between ps-0.5 pe-0.5">
+                    <div class="group-label">
+                      <span class=" font-semibold text-sm line-clamp-1	">
+                        {section.title}
+                      </span>
+                    </div>
+                    <svg
+                      aria-hidden="true"
+                      class="caret astro-3zixussu"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
+                    </svg>
+                  </summary>
+                  <ul class="">
+                    {section.data.map((item) => (
+                      <li class="border-s">
+                        <a href={item.slug} class=" text-sm">
+                          <span class="">{item.text}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <!-- right panel -->
