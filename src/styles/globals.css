@@ -36,10 +36,12 @@
 
     --header-height: 70px;
     --sitemaxw: 2560px;
-    --sidebar-width: 18.75rem;
     --link: #4CBB17;
     --link-hover: #EBFCE4;
     --link-hover-text: #0F2404;
+    --sidebar-width: 18.75rem;
+    --content-inline-start: 18.75rem;
+    --content-width: 45rem;
   }
 
   .dark {
@@ -82,7 +84,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 200;
-    src: url(/fonts/LiAdorNoirritExtraLight.woff2) format('woff2');
+    src: url(../assets/fonts/LiAdorNoirritExtraLight.woff2) format('woff2');
   }
 
   @font-face {
@@ -90,7 +92,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 300;
-    src: url(/fonts/LiAdorNoirritLight.woff2) format('woff2');
+    src: url(../assets/fonts/LiAdorNoirritLight.woff2) format('woff2');
   }
 
   @font-face {
@@ -98,7 +100,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 400;
-    src: url(/fonts/LiAdorNoirritRegular.woff2) format('woff2');
+    src: url(../assets/fonts/LiAdorNoirritRegular.woff2) format('woff2');
   }
 
   @font-face {
@@ -106,7 +108,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 600;
-    src: url(/fonts/LiAdorNoirritSemiBold.woff2) format('woff2');
+    src: url(../assets/fonts/LiAdorNoirritSemiBold.woff2) format('woff2');
   }
 
   @font-face {
@@ -114,7 +116,7 @@
     font-style: normal;
     font-display: swap;
     font-weight: 700;
-    src: url(/fonts/LiAdorNoirritBold.woff2) format('woff2');
+    src: url(/../assetsfonts/LiAdorNoirritBold.woff2) format('woff2');
   }
 
   * {
@@ -153,7 +155,7 @@
 
 body {
   scroll-behavior: smooth;
-  font-family: LiAdor, sans-serif;
+  font-family: "Noto Sans Bengali", sans-serif;
 }
 
 .sidbar__container .scrollbar {
@@ -180,4 +182,31 @@ body {
 
 .sidbar__container .section__title:hover {
   background-color: unset;
+}
+
+.main__section {
+  padding-inline-start: var(--content-inline-start);
+}
+
+.content__sec {
+  margin-inline-start: auto 0;
+  padding-top: var(--header-height);
+  min-height: 100vh;
+  width: calc(var(--content-width) + var(--sidebar-width)/2);
+}
+
+.aside {
+  position: relative;
+  order: 1;
+  width: calc(var(--content-width) - (var(--sidebar-width)));
+}
+
+.aside__content {
+  position: fixed;
+  top: 0;
+  padding-top: var(--header-height);
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
 }

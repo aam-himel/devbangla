@@ -2,14 +2,15 @@
 
 ## Tech stacks
 
-- [ ] Astro
-- [ ] Tailwind CSS
-- [ ] Shadcn UI
+- [x] Astro
+- [x] Tailwind CSS
+- [x] Shadcn UI
 - [ ] Content collection
 
 ## UI
 
+- [x] Custom bangla font- Li Ador Noirrit
 - [x] header
-- [ ] left sidebar
+- [x] left sidebar
 - [ ] right sidebar
 - [ ] main section

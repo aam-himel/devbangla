@@ -41,10 +41,16 @@ import "@/styles/globals.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body class="bg-background">
-    <header class="px-6 py-3 bg-slate-100 border-b z-10 relative">
+    <header class="px-6 py-3 bg-slate-100 border-b z-10 fixed w-full">
       <div class="flex items-center gap-2 justify-between">
         <div class="flex-[.3]">
           <a href="#" class="site-title"> <span class=""></span> ডেভবাংলা </a>
