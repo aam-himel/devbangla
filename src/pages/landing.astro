@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { Button } from '@/components/ui/button'
+
+import heroImg from '@/assets/img/hero-coding.svg'
+---
+
+<Layout title="Landing Page">
+	<main class="mxw mx-auto h-screen bg-blue-400">
+		<!-- hero section -->
+		<section
+			class="herobg flex h-screen flex-col items-center bg-slate-100 px-6 pt-[72px] text-center sm:flex-row sm:text-start"
+		>
+			<div class="pe-0 pt-12 sm:flex-1 sm:pe-16 sm:pt-0 md:pe-32 lg:pe-24">
+				<h1 class="mb-4 text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-5xl">
+					পেইড কোর্স এর দিন শেষ। <br />সব স্কিল শিখুন <span class="text-primary">ফ্রিতে</span>
+				</h1>
+				<p
+					class="mb-4 px-8 text-sm font-semibold leading-snug tracking-tight sm:pe-12 sm:ps-0 sm:text-lg lg:pe-24"
+				>
+					যেকোনো রকম স্কিল শিখুন মাতৃভাষায়, ফ্রী তে। আপনাদের ভালোবাসাই আমাদের পেমেন্ট
+				</p>
+
+				<Button>সকল স্কিল দেখুন </Button>
+			</div>
+			<div class="flex items-center justify-center bg-blue-200 sm:order-1 sm:flex-1">
+				<img src={heroImg.src} alt="" />
+			</div>
+		</section>
+		<!-- course selection section -->
+		<!-- why us section -->
+		<!-- cta section -->
+		<!-- faqs -->
+		<!-- footer -->
+	</main>
+</Layout>

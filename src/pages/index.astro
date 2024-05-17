@@ -1,73 +1,187 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { menuItems } from "@/utils/menuitems";
-const { html: htmlCourse } = menuItems;
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import { menuItems } from '@/utils/menuitems'
+const { html: htmlCourse } = menuItems
 ---
 
 <Layout title="ডেভবাংলা">
-  <div class="mxw">
-    <!-- left panel -->
-    <div class="sidbar__container">
-      <div
-        class="hidden sm:block fixed inset-0 sidebar h-screen border-e-[1px] px-4 overflow-y-auto scrollbar auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded dark:scrollbar-track:!bg-slate-500/[0.16] dark:scrollbar-thumb:!bg-slate-500/50 lg:supports-scrollbars:pr-2"
-      >
-        <h2 class="text-xl font-bold py-3 ps-3">এইচটিএমএল (HTML)</h2>
-        <ul class="p-1 outer-list">
-          {
-            htmlCourse.map((section) => (
-              <li class=" mb-3">
-                <details open>
-                  <summary class="flex items-center justify-between ps-0.5 pe-0.5">
-                    <div class="group-label">
-                      <span class=" font-semibold text-sm line-clamp-1	">
-                        {section.title}
-                      </span>
-                    </div>
-                    <svg
-                      aria-hidden="true"
-                      class="caret astro-3zixussu"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-                    </svg>
-                  </summary>
-                  <ul class="">
-                    {section.data.map((item) => (
-                      <li class="border-s">
-                        <a href={item.slug} class=" text-sm">
-                          <span class="">{item.text}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
+	<div class="mxw">
+		<!-- left panel -->
+		<div class="sidbar__container bg-[#f9f9f9]">
+			<div
+				class="sidebar scrollbar auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded dark:scrollbar-track:!bg-slate-500/[0.16] dark:scrollbar-thumb:!bg-slate-500/50 lg:supports-scrollbars:pr-2 fixed inset-0 hidden h-screen overflow-y-auto border-e-[1px] px-4 sm:block"
+			>
+				<h2 class="py-3 ps-3 text-xl font-bold">এইচটিএমএল (HTML)</h2>
+				<ul class="outer-list p-1">
+					{
+						htmlCourse.map((section) => (
+							<li class=" mb-3">
+								<details open>
+									<summary class="flex items-center justify-between pe-0.5 ps-0.5">
+										<div class="group-label">
+											<span class=" line-clamp-1 text-sm font-semibold	">{section.title}</span>
+										</div>
+										<svg
+											aria-hidden="true"
+											class="caret astro-3zixussu"
+											width="16"
+											height="16"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+										>
+											<path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
+										</svg>
+									</summary>
+									<ul class="">
+										{section.data.map((item) => (
+											<li class="border-s">
+												<a href={item.slug} class=" text-sm">
+													<span class="">{item.text}</span>
+												</a>
+											</li>
+										))}
+									</ul>
+								</details>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
 
-    <!-- mani section -->
-    <div class="main__section flex">
-      <!-- content section -->
-      <main class="content__sec border-e">
-        <h2>main section</h2>
-      </main>
-      <!-- right panel -->
-      <aside class="aside">
-        <div class="aside__content p-4">
-          <h3>On this page</h3>
-          <p>fasdf</p>
-          <p>fasdf</p>
-          <p>fadsf</p>
-          <p>dfadf</p>
-        </div>
-      </aside>
-    </div>
-  </div>
+		<!-- main section -->
+		<div class="main__section flex">
+			<!-- content section -->
+			<main class="content__sec border-e">
+				<h2 class="border-b p-8 text-3xl font-semibold capitalize">main section</h2>
+			</main>
+			<!-- right panel -->
+			<aside class="aside">
+				<div class="aside__content p-4">
+					<h3 class="my-4 text-xl font-semibold">On this page</h3>
+					<ul>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>VS Code</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>JetBrains IDEs</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Other Code Editors</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Stylelint</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Other tools</span>
+							</a>
+
+							<ul>
+								<li>
+									<a href="#_top" class="text-xs">
+										<span>ESlint</span>
+									</a>
+								</li>
+								<li>
+									<a href="#_top" class="text-xs">
+										<span>Pretier</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>VS Code</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>JetBrains IDEs</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Other Code Editors</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Stylelint</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Other tools</span>
+							</a>
+
+							<ul>
+								<li>
+									<a href="#_top" class="text-xs">
+										<span>ESlint</span>
+									</a>
+								</li>
+								<li>
+									<a href="#_top" class="text-xs">
+										<span>Pretier</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>VS Code</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>JetBrains IDEs</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Other Code Editors</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Stylelint</span>
+							</a>
+						</li>
+						<li>
+							<a href="#_top" class="text-xs">
+								<span>Other tools</span>
+							</a>
+
+							<ul>
+								<li>
+									<a href="#_top" class="text-xs">
+										<span>ESlint</span>
+									</a>
+								</li>
+								<li>
+									<a href="#_top" class="text-xs">
+										<span>Pretier</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+		</div>
+	</div>
 </Layout>

@@ -1,13 +1,4 @@
-// interface ContentSectionType {
-//     title: string,
-//     order: number,
-//     data:
-// };
-// interface ContentSectionType {
-//     title: string,
-//     order: number,
-//     data:
-// };
+
 
 // Type for an individual menu item
 interface MenuItem {
