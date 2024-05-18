@@ -12,18 +12,17 @@
 - [x] Custom bangla font- Li Ador Noirrit
 - [x] header
 - [x] left sidebar
-- [ ] right sidebar
+- [x] right sidebar
 - [ ] main section
-
 
 ## Pages
 
 - [ ] landing page
-  - [ ] hero section
-  - [ ] course selection section
-  - [ ] why us section
-  - [ ] cta section
-  - [ ] faqs
+  - [x] hero section
+  - [x] course selection section
+  - [x] why us section
+  - [x] cta section
+  - [x] faqs
   - [ ] footer
 - [ ] course index
 - [ ] course dynamic pages

@@ -1,67 +1,73 @@
 ---
 interface Props {
-  title: string;
+	title: string
 }
 
-const { title } = Astro.props;
-import { ModeToggle } from "@/components/ui/ModeToggle";
-import { NavMenu } from "@/components/ui/nav-menu";
-import { Button } from "@/components/ui/button";
-import "@/styles/globals.css";
+const { title } = Astro.props
+import { ModeToggle } from '@/components/ui/ModeToggle'
+import { MobileMenuSheet } from '@/components/ui/mobile-menu-sheet'
+import { NavMenu } from '@/components/ui/nav-menu'
+import { Button } from '@/components/ui/button'
+import '@/styles/globals.css'
 ---
 
 <script is:inline>
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme')
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+	}
+	const isDark = getThemePreference() === 'dark'
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
 
-  if (typeof localStorage !== "undefined") {
-    const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-  }
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark')
+			localStorage.setItem('theme', isDark ? 'dark' : 'light')
+		})
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class']
+		})
+	}
 </script>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>{title}</title>
-  </head>
-  <body class="bg-background">
-    <header class="px-6 py-3 bg-slate-100 border-b z-10 fixed w-full h-[70px]">
-      <div class="flex items-center gap-2 justify-between">
-        <div class="flex-[.3]">
-          <a href="#" class="site-title"> <span class=""></span> ডেভবাংলা </a>
-        </div>
-        <div class="flex-1">
-          <NavMenu client:load />
-        </div>
-        <ModeToggle client:load />
-      </div>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>{title}</title>
+	</head>
+	<body class="bg-background">
+		<header
+			class="fixed z-10 mx-auto h-[70px] w-full border-b border-neutral-200 bg-white/[0.6] px-6 py-3 backdrop-blur-sm dark:border-white/[0.1] dark:bg-black/[0.6]"
+		>
+			<div class="container mx-auto flex items-center justify-between gap-2">
+				<div class="flex-[.3]">
+					<a href="#" class="site-title"> <span class=""></span> ডেভবাংলা </a>
+				</div>
+				<div class="hidden flex-1 sm:block">
+					<NavMenu client:load />
+				</div>
+				<div class="hidden sm:block">
+					<ModeToggle client:load />
+				</div>
+				<div class="block sm:hidden">
+					<MobileMenuSheet client:load />
+				</div>
+			</div>
+		</header>
 
-    <slot />
-  </body>
+		<slot />
+	</body>
 </html>
