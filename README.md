@@ -1,4 +1,12 @@
-# ডেভবাংলা (devbangla)
+![Banglacoding platform](./src/assets/img/herodark.png 'Devbangla - learn coding in bangla')
+
+<p align="center">
+  <br/>
+  <a href="#">ডেভবাংলা (devbangla)</a> is a bangla coding platform &mdash; <br/>
+  যেকোনো রকম স্কিল শিখুন মাতৃভাষায়, ফ্রী তে।
+  <br/>
+  <br/>
+</p>
 
 ## Tech stacks
 
