@@ -84,8 +84,6 @@ import heroImg from '@/assets/img/hero-coding.svg'
 								fill="none"
 								stroke="#0F2404"
 								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
 								class="lucide lucide-braces"
 								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
 								></path><path
@@ -105,8 +103,24 @@ import heroImg from '@/assets/img/hero-coding.svg'
 								fill="none"
 								stroke="#0F2404"
 								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
 								class="lucide lucide-braces"
 								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
 								></path><path
@@ -126,29 +140,6 @@ import heroImg from '@/assets/img/hero-coding.svg'
 								fill="none"
 								stroke="#0F2404"
 								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-braces"
-								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
-								></path><path
-									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
-								></path></svg
-							>
-							<p>এইচটিএমএল (HTML)</p>
-						</CardContent>
-					</Card>
-					<Card className="">
-						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="#0F2404"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
 								class="lucide lucide-braces"
 								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
 								></path><path
@@ -313,7 +304,7 @@ import heroImg from '@/assets/img/hero-coding.svg'
 		<!-- footer -->
 
 		<footer class="bg-[#071202] text-white dark:bg-background">
-			<div class="container grid grid-cols-5 py-12">
+			<div class="container grid grid-cols-5 border-b py-12">
 				<div class="col-span-2">
 					<span>ডেভবাংলা</span>
 					<p>আমাদের নিউজ লেটার্স এ সাবস্ক্রাইব করুন</p>
@@ -325,80 +316,83 @@ import heroImg from '@/assets/img/hero-coding.svg'
 
 				<!-- tutorials -->
 				<div>
-					<h3>টিউটোরিয়াল</h3>
-					<ul>
-						<li>
-							<a href="#">জাভাস্ক্রিপ্ট টিউটোরিয়াল</a>
+					<h3 class="mb-3 text-lg font-semibold">টিউটোরিয়াল</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm">জাভাস্ক্রিপ্ট টিউটোরিয়াল</a>
 						</li>
-						<li>
-							<a href="#">পাইথন ৩ টিউটোরিয়াল</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">পাইথন ৩ টিউটোরিয়াল</a>
 						</li>
 
-						<li>
-							<a href="#">এইচটিএমএল টিউটোরিয়াল</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">এইচটিএমএল টিউটোরিয়াল</a>
 						</li>
-						<li>
-							<a href="#">সি টিউটোরিয়াল</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">সি টিউটোরিয়াল</a>
 						</li>
-						<li>
-							<a href="#">সি++ টিউটোরিয়াল</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">সি++ টিউটোরিয়াল</a>
 						</li>
-						<li>
-							<a href="#">ডিএসএ টিউটোরিয়াল</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ডিএসএ টিউটোরিয়াল</a>
 						</li>
 					</ul>
 				</div>
 				<!-- exemples -->
 				<div>
-					<h3>উদাহরণ</h3>
-					<ul>
-						<li>
-							<a href="#">জাভাস্ক্রিপ্ট উদাহরণ</a>
+					<h3 class="mb-3 text-lg font-semibold">উদাহরণ</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">জাভাস্ক্রিপ্ট উদাহরণ</a>
 						</li>
-						<li>
-							<a href="#">পাইথন উদাহরণ</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">পাইথন উদাহরণ</a>
 						</li>
 
-						<li>
-							<a href="#">এইচটিএমএল উদাহরণ</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">এইচটিএমএল উদাহরণ</a>
 						</li>
-						<li>
-							<a href="#">সি উদাহরণ</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">সি উদাহরণ</a>
 						</li>
-						<li>
-							<a href="#">সি++ উদাহরণ</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">সি++ উদাহরণ</a>
 						</li>
 					</ul>
 				</div>
 				<!-- company -->
 
 				<div>
-					<h3>কোম্পানি</h3>
-					<ul>
-						<li>
-							<a href="#">আমাদের সম্পর্কে </a>
+					<h3 class="mb-3 text-lg font-semibold">কোম্পানি</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm">আমাদের সম্পর্কে </a>
 						</li>
-						<li>
-							<a href="#">গোপনীয়তা নীতি</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">গোপনীয়তা নীতি</a>
 						</li>
 
-						<li>
-							<a href="#">শর্তাবলী</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">শর্তাবলী</a>
 						</li>
-						<li>
-							<a href="#">যোগাযোগ</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">যোগাযোগ</a>
 						</li>
-						<li>
-							<a href="#">ব্লগ</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ব্লগ</a>
 						</li>
-						<li>
-							<a href="#">ক্যারিয়ার</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ক্যারিয়ার</a>
 						</li>
-						<li>
-							<a href="#">ইউটিউব</a>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ইউটিউব</a>
 						</li>
 					</ul>
 				</div>
+			</div>
+			<div class="container py-4">
+				<p>© ডেভবাংলা . All rights reserved.</p>
 			</div>
 		</footer>
 	</main>
