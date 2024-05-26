@@ -53,10 +53,12 @@ const { html: htmlCourse } = menuItems
 		<div class="main__section flex">
 			<!-- content section -->
 			<main class="content__sec border-e">
-				<h2 class="border-b p-8 text-3xl font-semibold capitalize">main section</h2>
+				<h2 class="content__title mt-16 border-b p-8 text-2xl font-semibold capitalize lg:text-4xl">
+					main section
+				</h2>
 			</main>
 			<!-- right panel -->
-			<aside class="aside">
+			<aside class="aside layout--right">
 				<div class="aside__content p-4">
 					<h3 class="my-4 text-xl font-semibold">On this page</h3>
 					<ul>
@@ -179,6 +181,26 @@ const { html: htmlCourse } = menuItems
 							</ul>
 						</li>
 					</ul>
+				</div>
+			</aside>
+
+			<aside class="right__secetion fixed top-[70px] border-b">
+				<div class="flex h-12 items-center gap-3 px-5 py-3">
+					<div class="flex items-center gap-2 text-xs">
+						On this page
+						<svg
+							aria-hidden="true"
+							class="caret astro-yitqccco astro-qbjwflwa"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							><path
+								d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
+							></path></svg
+						>
+					</div>
+					<span class="text-xs"> Overview </span>
 				</div>
 			</aside>
 		</div>

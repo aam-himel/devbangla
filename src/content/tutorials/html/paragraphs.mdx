@@ -1,0 +1,103 @@
+---
+title: "What is HTML?"
+pubDate: 2024-05-19
+description: "HTML (HyperText Markup Language) is used to structure and format the content of websites on the World Wide Web. Web Developers use it to create a skeleton of modern websites and web apps."
+author: "Mamun"
+image: 
+  url: "/images/html-intro.png"
+  alt: "HTML Introduction"
+tags: ["HTML", "Web Development"]
+category: "HTML"
+difficulty: "Beginner"
+estimatedTime: "30 minutes"
+prerequisites: ["None"]
+sections:
+  - title: "What is HTML?"
+    content: "HTML stands for HyperText Markup Language. It is the standard language for creating web pages."
+  - title: "Basic HTML Structure"
+    content: "A basic HTML document consists of a doctype declaration, html, head, and body tags."
+    codeSnippet: "<!DOCTYPE html>\n<html>\n<head>\n<title>Page Title</title>\n</head>\n<body>\n<h1>This is a Heading</h1>\n<p>This is a paragraph.</p>\n</body>\n</html>"
+resources:
+  - name: "MDN Web Docs: HTML"
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+relatedTutorials: ["html-elements", "html-attributes"]
+
+---
+# HTML Paragraphs
+
+The HTML  `<p>`  tag is used to create paragraphs. For example,
+
+```
+<p>HTML is fun to learn.</p>
+```
+
+সাধারনত ওয়েব পেজে কোন অনুচ্ছেদ বা Paragraph প্রদর্শন করার জন্য প্যারাগ্রাফ ট্যাগ ব্যবহার করা হয়। অর্থাৎ এইচটিএমএল ডকুমেন্টে প্যারাগ্রাফ লেখা হয় ট্যাগ ব্যবহার করে।
+
+`<p>` ট্যাগ দিয়ে শুরু করার পর প্যারাগ্রাফ এর শেষে ক্লোজিং ট্যাগ অর্থাৎ `</p>` দিতে হবে। যদিও অনেক ব্রাউযার এইচটিএমএল ডকুমেন্ট সঠিক ভাবেই প্রদর্শন করে, আপনি ক্লোজিং ট্যাগ অর্থাৎ দিতে ভুলে গেলেও। তারপরও আপনার উচিৎ সবসময় ক্লোজিং ট্যাগ ব্যবহার করা।
+
+### উদাহরণ
+
+```html
+<body>
+<p> This is a paragraph.</p>
+</body>
+```
+
+কোড কপি করুন
+
+ 
+[কোড এডিটর](http://www.websschool.com/html5/html-example/html-paragraph-example.html)
+
+  
+
+**নোট -** ব্রাউজার স্বয়ংক্রিয় ভাবেই প্যারাগ্রাফ এর উপর ও নিচে কিছু জায়গা খালি রাখে অর্থাৎ মার্জিন সংযুক্ত করে।
+
+----------
+
+## এইচটিএমএলএ নন-ব্রেকিং স্পেস ( &nbsp; ) এর ব্যবহার
+
+এইচটিএমএল এ একাধিক স্পেস, কারেজ রিটার্ন, ট্যাব, ইত্যাদি পরিবর্তিত হয়ে শুধুমাত্র একটি স্পেস সৃষ্টি করে। আপনি code এ যতগুলোই স্পেস দিন না কেন আউটপুট এ মাত্র একটি স্পেসই পাবেন।
+
+### উদাহরণ
+
+```html
+<body>
+<p> This     is a     paragraph. </p>  
+</body>
+```
+
+তাই আপনি যদি কোন text এর মাঝে অতিরিক্ত স্পেস তৈরি করতে চান তবে আপনাকে  **&nbsp;** শব্দ টি ব্যবহার করতে হবে। আপনি যতগুলো স্পেস চান আপনাকে ততগুলো &nbsp ব্যবহার করতে হবে।
+
+### উদাহরণ
+
+
+```html
+<body>   
+<p> This &nbsp; &nbsp; is a &nbsp; &nbsp; paragraph. </p>   
+	  
+</body>
+```
+
+কোড কপি করুন
+
+  
+
+[কোড এডিটর](http://www.websschool.com/html5/html-example/html-paragraph-non-breaking-space-working-example.html)
+
+  
+
+----------
+
+## এইচটিএমএলের পারাগ্রাফ ট্যাগ
+
+ট্যাগ
+
+বর্ণনা
+
+&nbsp
+
+টেক্সটের আগে বা পরে স্পেস, ট্যাব বা ক্যারেজ রিটার্ন তৈরি করে।
+
+<br />
+
+একটি নতুন লাইন তৈরি করে।

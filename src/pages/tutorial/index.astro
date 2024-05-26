@@ -1,6 +1,22 @@
 ---
 import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import { menuItems } from '@/utils/menuitems'
 const tutorials = await getCollection('tutorials')
+const html = await tutorials.filter((tuts) => tuts.slug.includes('html'))
+console.log(html.length)
 ---
 
-<h1>Tutorial index</h1>
+<Layout title="ডেভবাংলা">
+	<div class="mxw pt-24">
+		<ul>
+			{
+				tutorials.map((tuts) => (
+					<li>
+						<a href=`${tuts.slug}`>{tuts.slug}</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</Layout>
