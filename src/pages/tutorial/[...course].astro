@@ -1,13 +1,9 @@
 ---
 import Prose from '@/components/Prose.astro'
 import Layout from '../../layouts/Layout.astro'
-import { menuItems } from '@/utils/menuitems'
-const { html: htmlCourse } = menuItems
-const tutorials = await getCollection('tutorials')
-const html = await tutorials.filter((tuts) => tuts.slug.includes('html'))
-console.log(html.length)
+import { htmlCourse } from '@/utils/menuitems'
 import { getCollection } from 'astro:content'
-
+import OnThisPage from '@/components/OnThisPage.astro'
 export async function getStaticPaths() {
 	const tutorials = await getCollection('tutorials')
 
@@ -18,7 +14,9 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props
-const { Content } = await entry.render()
+
+const { Content, headings } = await entry.render()
+console.log(headings)
 ---
 
 <Layout title="ডেভবাংলা">
@@ -82,134 +80,17 @@ const { Content } = await entry.render()
 					</Prose>
 				</div>
 			</main>
+
 			<!-- right panel -->
 			<aside class="aside layout--right">
 				<div class="aside__content p-4">
 					<h3 class="my-4 text-xl font-semibold">On this page</h3>
-					<ul>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>VS Code</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>JetBrains IDEs</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other Code Editors</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Stylelint</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other tools</span>
-							</a>
 
-							<ul>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>ESlint</span>
-									</a>
-								</li>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>Pretier</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>VS Code</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>JetBrains IDEs</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other Code Editors</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Stylelint</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other tools</span>
-							</a>
-
-							<ul>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>ESlint</span>
-									</a>
-								</li>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>Pretier</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>VS Code</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>JetBrains IDEs</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other Code Editors</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Stylelint</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other tools</span>
-							</a>
-
-							<ul>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>ESlint</span>
-									</a>
-								</li>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>Pretier</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					<OnThisPage client:load headings={headings} />
 				</div>
 			</aside>
 
-			<aside class="right__secetion fixed top-[70px] border-b">
+			<!-- <aside class="right__secetion fixed top-[70px] border-b">
 				<div class="flex h-12 items-center gap-3 px-5 py-3">
 					<div class="flex items-center gap-2 text-xs">
 						On this page
@@ -227,7 +108,7 @@ const { Content } = await entry.render()
 					</div>
 					<span class="text-xs"> Overview </span>
 				</div>
-			</aside>
+			</aside> -->
 		</div>
 	</div>
 </Layout>

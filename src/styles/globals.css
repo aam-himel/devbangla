@@ -42,6 +42,7 @@
     --sidebar-width: 18.75rem;
     --content-inline-start: 18.75rem;
     --content-width: 45rem;
+    --depth: 0;
   }
 
   .dark {
@@ -288,4 +289,23 @@ body {
     padding-inline-start: 0;
 
   }
+}
+
+/* depth */
+
+/* .aside__content ul,
+.aside__content li {
+  padding-inline-start: calc(var(--depth, 0) * 1rem * (var(--depth, 0) > 1));
+} */
+.aside__content ul,
+.aside__content li {
+  margin-bottom: .25rem;
+}
+
+.no-padding {
+  padding-inline-start: 0;
+}
+
+.padding-depth {
+  padding-inline-start: calc(var(--depth, 0) * .75rem);
 }

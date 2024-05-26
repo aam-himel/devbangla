@@ -1,208 +1,399 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { menuItems } from '@/utils/menuitems'
-const { html: htmlCourse } = menuItems
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import AccordionComp from '@/components/custom/accordion-comp'
+import heroImg from '@/assets/img/hero-coding.svg'
 ---
 
-<Layout title="ডেভবাংলা">
-	<div class="mxw">
-		<!-- left panel -->
-		<div class="sidbar__container bg-[#f9f9f9]">
-			<div
-				class="sidebar scrollbar auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded dark:scrollbar-track:!bg-slate-500/[0.16] dark:scrollbar-thumb:!bg-slate-500/50 lg:supports-scrollbars:pr-2 fixed inset-0 hidden h-screen overflow-y-auto border-e-[1px] px-4 sm:block"
+<Layout title="Landing Page">
+	<main class="mxw mx-auto h-auto sm:h-screen">
+		<!-- hero section -->
+		<div class="herobg overflow-hidden border-b dark:border-b">
+			<svg
+				class="animate-spotlight pointer-events-none absolute -top-20 left-0 z-[1] h-[150%] w-[120%] opacity-[.2] md:-top-10 md:left-40 lg:w-[80%]"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 3787 2842"
+				fill="none"
 			>
-				<h2 class="py-3 ps-3 text-xl font-bold">এইচটিএমএল (HTML)</h2>
-				<ul class="outer-list p-1">
-					{
-						htmlCourse.map((section) => (
-							<li class=" mb-3">
-								<details open>
-									<summary class="flex items-center justify-between pe-0.5 ps-0.5">
-										<div class="group-label">
-											<span class=" line-clamp-1 text-sm font-semibold">{section.title}</span>
-										</div>
-										<svg
-											aria-hidden="true"
-											class="caret astro-3zixussu"
-											width="16"
-											height="16"
-											viewBox="0 0 24 24"
-											fill="currentColor"
-										>
-											<path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-										</svg>
-									</summary>
-									<ul class="">
-										{section.data.map((item) => (
-											<li class="border-s">
-												<a href={item.slug} class=" text-sm">
-													<span class="">{item.text}</span>
-												</a>
-											</li>
-										))}
-									</ul>
-								</details>
-							</li>
-						))
-					}
-				</ul>
+				<g filter="url(#newFilter)">
+					<ellipse
+						cx="1824.71"
+						cy="373.501"
+						rx="1824.71"
+						ry="373.501"
+						transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3531.88 2191.09)"
+						fill="white"
+						fill-opacity="0.25"></ellipse>
+				</g>
+				<defs>
+					<filter
+						id="newFilter"
+						x="0"
+						y="0"
+						width="3787"
+						height="2842"
+						filterUnits="userSpaceOnUse"
+						color-interpolation-filters="sRGB"
+					>
+						<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+						></feBlend>
+						<feGaussianBlur stdDeviation="120" result="effect1_foregroundBlur"></feGaussianBlur>
+					</filter>
+				</defs>
+			</svg>
+
+			<section
+				class="container mx-auto flex h-auto flex-col items-center justify-center px-6 pt-[72px] text-center sm:h-screen sm:flex-row sm:text-start"
+			>
+				<div class="mb-12 pe-0 pt-12 sm:mb-0 sm:flex-1 sm:pe-16 sm:pt-0 md:pe-32 lg:pe-24">
+					<h1
+						class="mb-4 text-2xl font-bold leading-tight tracking-tighter sm:text-3xl md:text-5xl"
+					>
+						পেইড কোর্স এর দিন শেষ। <br />সব স্কিল শিখুন <span class="text-primary">ফ্রিতে</span>
+					</h1>
+					<p
+						class="mb-4 px-8 text-sm font-semibold leading-snug tracking-tight sm:pe-12 sm:ps-0 sm:text-lg lg:pe-24"
+					>
+						যেকোনো রকম স্কিল শিখুন মাতৃভাষায়, ফ্রী তে। আপনাদের ভালোবাসাই আমাদের পেমেন্ট
+					</p>
+
+					<Button className=" px-8 text-lg font-bold dark:text-white">সকল স্কিল দেখুন </Button>
+				</div>
+				<div class="hidden items-center justify-center bg-green-200 py-12 sm:flex sm:flex-1">
+					<img src={heroImg.src} alt="" class="object-cover" />
+				</div>
+			</section>
+		</div>
+
+		<!-- course selection section -->
+		<section class="bg-[#FAFCFD] px-4 py-16 dark:bg-background">
+			<div class="container mx-auto">
+				<h2 class="mb-8 text-3xl font-bold">যেইটা শিখতে চান সিলেক্ট করুন</h2>
+
+				<div class="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					<Card className=" hover:cursor-pointer ">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+				</div>
 			</div>
-		</div>
+		</section>
 
-		<!-- main section -->
-		<div class="main__section flex">
-			<!-- content section -->
-			<main class="content__sec border-e">
-				<h2 class="content__title mt-16 border-b p-8 text-2xl font-semibold capitalize lg:text-4xl">
-					main section
-				</h2>
-			</main>
-			<!-- right panel -->
-			<aside class="aside layout--right">
-				<div class="aside__content p-4">
-					<h3 class="my-4 text-xl font-semibold">On this page</h3>
-					<ul>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>VS Code</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>JetBrains IDEs</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other Code Editors</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Stylelint</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other tools</span>
-							</a>
+		<!-- why us section -->
+		<section class="bg-[#FAFCFD] px-4 pb-16 dark:bg-background">
+			<div class="container mx-auto">
+				<h2 class="mb-8 text-3xl font-bold">কেন আমাদের থেকে শিখবেন</h2>
 
-							<ul>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>ESlint</span>
-									</a>
-								</li>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>Pretier</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>VS Code</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>JetBrains IDEs</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other Code Editors</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Stylelint</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other tools</span>
-							</a>
+				<div class="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					<Card className=" hover:cursor-pointer ">
+						<CardContent className="flex flex-col items-center gap-3  p-0 px-6 py-4 text-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<h3 class="text-2xl font-bold">মাতৃভাষায় শেখা</h3>
 
-							<ul>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>ESlint</span>
-									</a>
-								</li>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>Pretier</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>VS Code</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>JetBrains IDEs</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other Code Editors</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Stylelint</span>
-							</a>
-						</li>
-						<li>
-							<a href="#_top" class="text-xs">
-								<span>Other tools</span>
-							</a>
+							<p>
+								আমাদের সম্পূর্ণ কোর্স বাংলায় উপলব্ধ, যা শেখার প্রক্রিয়াটি সহজ এবং সুলভ করে তোলে।
+							</p>
+						</CardContent>
+					</Card>
+					<Card className=" hover:cursor-pointer ">
+						<CardContent className="flex flex-col items-center gap-3  p-0 px-6 py-4 text-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<h3 class="text-2xl font-bold">সম্পূর্ণ বিনামূল্যে</h3>
 
-							<ul>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>ESlint</span>
-									</a>
-								</li>
-								<li>
-									<a href="#_top" class="text-xs">
-										<span>Pretier</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
+							<p>আমাদের সম্পূর্ণ কোর্স মুলত বিনামূল্যে প্রশিক্ষণ নিতে পারবেন</p>
+						</CardContent>
+					</Card>
+					<Card className=" hover:cursor-pointer ">
+						<CardContent className="flex flex-col items-center gap-3  p-0 px-6 py-4 text-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<h3 class="text-2xl font-bold">স্বাধীনতা</h3>
+
+							<p>আমাদের প্লাটফর্মে আপনি নিজের সময় পরিচালনা করতে পারেন</p>
+						</CardContent>
+					</Card>
+					<Card className=" hover:cursor-pointer ">
+						<CardContent className="flex flex-col items-center gap-3  p-0 px-6 py-4 text-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<h3 class="text-2xl font-bold">মাতৃভাষায় শেখা</h3>
+
+							<p>
+								আমাদের সম্পূর্ণ কোর্স বাংলায় উপলব্ধ, যা শেখার প্রক্রিয়াটি সহজ এবং সুলভ করে তোলে।
+							</p>
+						</CardContent>
+					</Card>
 				</div>
-			</aside>
+			</div>
+		</section>
+		<!-- cta section -->
 
-			<aside class="right__secetion fixed top-[70px] border-b">
-				<div class="flex h-12 items-center gap-3 px-5 py-3">
-					<div class="flex items-center gap-2 text-xs">
-						On this page
-						<svg
-							aria-hidden="true"
-							class="caret astro-yitqccco astro-qbjwflwa"
-							width="16"
-							height="16"
-							viewBox="0 0 24 24"
-							fill="currentColor"
-							><path
-								d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
-							></path></svg
-						>
+		<section class="bg-white px-4 py-12 dark:bg-background">
+			<div class="container mx-auto py-6">
+				<Card className=" py-12 hover:cursor-pointer ">
+					<CardContent className="flex flex-col items-center gap-3  p-0 px-6 py-4 text-center">
+						<h2 class="text-3xl font-bold">সঠিক প্রোগ্রামটি বেছে নিন</h2>
+						<p class="mx-auto max-w-72">
+							সফল ক্যারিয়ার গড়তে দরকার সঠিক জায়গায় নিজের সময় আর পরিশ্রম দেয়া।
+						</p>
+						<Button>ক্যারিয়ার কনসাল্টেন্সি নিতে যোগাযোগ করুন </Button>
+					</CardContent>
+				</Card>
+			</div>
+		</section>
+		<!-- faqs -->
+		<section class="bg-[#FAFCFD] px-4 py-12 dark:bg-background">
+			<div class="container mx-auto py-6">
+				<h2 class="mb-8 text-3xl font-bold">আপনাদের যত জিজ্ঞাসা</h2>
+				<AccordionComp client:load />
+			</div>
+		</section>
+		<!-- footer -->
+
+		<footer class="bg-[#071202] text-white dark:bg-background">
+			<div class="container grid grid-cols-5 border-b py-12">
+				<div class="col-span-2">
+					<span>ডেভবাংলা</span>
+					<p>আমাদের নিউজ লেটার্স এ সাবস্ক্রাইব করুন</p>
+					<div class="flex w-full max-w-sm items-center space-x-2">
+						<Input type="email" placeholder="Email" />
+						<Button type="submit" variant="default">Subscribe</Button>
 					</div>
-					<span class="text-xs"> Overview </span>
 				</div>
-			</aside>
-		</div>
-	</div>
+
+				<!-- tutorials -->
+				<div>
+					<h3 class="mb-3 text-lg font-semibold">টিউটোরিয়াল</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm">জাভাস্ক্রিপ্ট টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">পাইথন ৩ টিউটোরিয়াল</a>
+						</li>
+
+						<li class="mb-1">
+							<a href="#" class="text-sm">এইচটিএমএল টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">সি টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">সি++ টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ডিএসএ টিউটোরিয়াল</a>
+						</li>
+					</ul>
+				</div>
+				<!-- exemples -->
+				<div>
+					<h3 class="mb-3 text-lg font-semibold">উদাহরণ</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">জাভাস্ক্রিপ্ট উদাহরণ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">পাইথন উদাহরণ</a>
+						</li>
+
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">এইচটিএমএল উদাহরণ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">সি উদাহরণ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">সি++ উদাহরণ</a>
+						</li>
+					</ul>
+				</div>
+				<!-- company -->
+
+				<div>
+					<h3 class="mb-3 text-lg font-semibold">কোম্পানি</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm">আমাদের সম্পর্কে </a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">গোপনীয়তা নীতি</a>
+						</li>
+
+						<li class="mb-1">
+							<a href="#" class="text-sm">শর্তাবলী</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">যোগাযোগ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ব্লগ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ক্যারিয়ার</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ইউটিউব</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="container py-4">
+				<p>© ডেভবাংলা . All rights reserved.</p>
+			</div>
+		</footer>
+	</main>
 </Layout>

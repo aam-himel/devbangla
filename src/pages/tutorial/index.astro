@@ -1,9 +1,11 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
-import { menuItems } from '@/utils/menuitems'
 const tutorials = await getCollection('tutorials')
-const html = await tutorials.filter((tuts) => tuts.slug.includes('html'))
+// const html = await tutorials.filter((tuts) => tuts.slug.includes('html'))
+const html = await getCollection('tutorials', ({ data }) => {
+  return data.category == 'HTML'
+});
 console.log(html.length)
 ---
 
@@ -11,7 +13,7 @@ console.log(html.length)
 	<div class="mxw pt-24">
 		<ul>
 			{
-				tutorials.map((tuts) => (
+				html.map((tuts) => (
 					<li>
 						<a href=`${tuts.slug}`>{tuts.slug}</a>
 					</li>

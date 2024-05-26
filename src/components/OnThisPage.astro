@@ -1,0 +1,22 @@
+---
+import type { MarkdownHeading } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+interface Props {
+	headings: MarkdownHeading[]
+}
+const { headings } = Astro.props
+---
+
+<ul>
+	{
+		headings.map((title) => (
+			<>
+				<li style=`--depth : ${title.depth}`  class={title.depth >= 2 ? 'padding-depth' : 'no-padding'}>
+					<a href="#_top" class="text-sm">
+						{title.text}
+					</a>
+				</li>
+			</>
+		))
+	}
+</ul>
