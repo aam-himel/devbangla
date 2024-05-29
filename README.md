@@ -34,3 +34,16 @@
   - [ ] footer
 - [ ] course index
 - [ ] course dynamic pages
+
+# Intractive SVG generate
+
+- [ ] Decode how Roadmap.sh works
+- [ ] Learn about svg cration
+- [ ] Best way to make it interactive
+- [ ] how to work with svg in figma
+- [ ] Create an svg
+- [ ] Style it
+- [ ] Make it interactive
+- [ ] Add new pages on Astro
+- [ ] Include that svg
+- [ ] and woola!

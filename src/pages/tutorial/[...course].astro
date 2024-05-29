@@ -16,7 +16,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props
 
 const { Content, headings } = await entry.render()
-console.log(headings)
+
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+console.log(currentPath)
 ---
 
 <Layout title="ডেভবাংলা">
@@ -50,7 +53,7 @@ console.log(headings)
 									<ul class="">
 										{section.data.map((item) => (
 											<li class="border-s">
-												<a href={item.slug} class=" text-sm">
+												<a href={item.slug} class="text-sm">
 													<span class="">{item.text}</span>
 												</a>
 											</li>
@@ -86,7 +89,7 @@ console.log(headings)
 				<div class="aside__content p-4">
 					<h3 class="my-4 text-xl font-semibold">On this page</h3>
 
-					<OnThisPage client:load headings={headings} />
+					<OnThisPage headings={headings} />
 				</div>
 			</aside>
 

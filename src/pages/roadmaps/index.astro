@@ -1,0 +1,257 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import AccordionComp from '@/components/custom/accordion-comp'
+import heroImg from '@/assets/img/hero-coding.svg'
+import { ResizableSection } from '@/components/custom/resizable-section'
+---
+
+<Layout title="Landing Page">
+	<main class="mxw mx-auto h-auto sm:h-screen">
+		<!-- hero section -->
+		<div class="herobg overflow-hidden border-b dark:border-b">
+			<svg
+				class="animate-spotlight pointer-events-none absolute -top-20 left-0 z-[1] h-[150%] w-[120%] opacity-[.2] md:-top-10 md:left-40 lg:w-[80%]"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 3787 2842"
+				fill="none"
+			>
+				<g filter="url(#newFilter)">
+					<ellipse
+						cx="1824.71"
+						cy="373.501"
+						rx="1824.71"
+						ry="373.501"
+						transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3531.88 2191.09)"
+						fill="white"
+						fill-opacity="0.25"></ellipse>
+				</g>
+				<defs>
+					<filter
+						id="newFilter"
+						x="0"
+						y="0"
+						width="3787"
+						height="2842"
+						filterUnits="userSpaceOnUse"
+						color-interpolation-filters="sRGB"
+					>
+						<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"
+						></feBlend>
+						<feGaussianBlur stdDeviation="120" result="effect1_foregroundBlur"></feGaussianBlur>
+					</filter>
+				</defs>
+			</svg>
+
+			<section
+				class="container mx-auto flex h-auto flex-col items-center justify-center px-6 pt-[72px] text-center sm:h-screen sm:flex-row sm:text-start"
+			>
+				<h1>Roadmaps</h1>
+			</section>
+		</div>
+
+		<!-- course selection section -->
+		<section class="bg-[#FAFCFD] px-4 py-16 dark:bg-background">
+			<div class="container mx-auto">
+				<h2 class="mb-8 text-3xl font-bold">যেইটা শিখতে চান সিলেক্ট করুন</h2>
+
+				<div class="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					<Card className=" hover:cursor-pointer ">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+				</div>
+			</div>
+		</section>
+
+		<!-- footer -->
+
+		<footer class="bg-[#071202] text-white dark:bg-background">
+			<div class="container grid grid-cols-5 border-b py-12">
+				<div class="col-span-2">
+					<span>ডেভবাংলা</span>
+					<p>আমাদের নিউজ লেটার্স এ সাবস্ক্রাইব করুন</p>
+					<div class="flex w-full max-w-sm items-center space-x-2">
+						<Input type="email" placeholder="Email" />
+						<Button type="submit" variant="default">Subscribe</Button>
+					</div>
+				</div>
+
+				<!-- tutorials -->
+				<div>
+					<h3 class="mb-3 text-lg font-semibold">টিউটোরিয়াল</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm">জাভাস্ক্রিপ্ট টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">পাইথন ৩ টিউটোরিয়াল</a>
+						</li>
+
+						<li class="mb-1">
+							<a href="#" class="text-sm">এইচটিএমএল টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">সি টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">সি++ টিউটোরিয়াল</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ডিএসএ টিউটোরিয়াল</a>
+						</li>
+					</ul>
+				</div>
+				<!-- exemples -->
+				<div>
+					<h3 class="mb-3 text-lg font-semibold">উদাহরণ</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">জাভাস্ক্রিপ্ট উদাহরণ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">পাইথন উদাহরণ</a>
+						</li>
+
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">এইচটিএমএল উদাহরণ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">সি উদাহরণ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm" class="text-sm">সি++ উদাহরণ</a>
+						</li>
+					</ul>
+				</div>
+				<!-- company -->
+
+				<div>
+					<h3 class="mb-3 text-lg font-semibold">কোম্পানি</h3>
+					<ul class="text-green-100">
+						<li class="mb-1">
+							<a href="#" class="text-sm">আমাদের সম্পর্কে </a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">গোপনীয়তা নীতি</a>
+						</li>
+
+						<li class="mb-1">
+							<a href="#" class="text-sm">শর্তাবলী</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">যোগাযোগ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ব্লগ</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ক্যারিয়ার</a>
+						</li>
+						<li class="mb-1">
+							<a href="#" class="text-sm">ইউটিউব</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="container py-4">
+				<p>© ডেভবাংলা . All rights reserved.</p>
+			</div>
+		</footer>
+	</main>
+</Layout>

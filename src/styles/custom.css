@@ -1,0 +1,68 @@
+/* hero svg */
+
+.hero__svg svg {
+}
+.hero__svg .hover:hover {
+	cursor: pointer;
+	scale: 1.01;
+	transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hero__svg .anime {
+	animation: float 4s ease-in-out infinite;
+}
+.hero__svg .anime2 {
+	animation: float 4.3s ease-in-out infinite;
+}
+.hero__svg .anime3 {
+	animation: float 4.6s ease-in-out infinite;
+}
+.hero__svg .anime4 {
+	animation: float 4.8s ease-in-out infinite;
+}
+
+@keyframes svghover {
+	0% {
+		transform: translateY(-20px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(20px);
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes type {
+	0% {
+		transform: translateY(-2px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-2px);
+	}
+}
+
+.hero__svg .typing {
+	animation: type 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+	transition: all 0.3s ease-in-out;
+}
+
+.active {
+	background: rgb(69, 87, 249);
+	color: #fff !important;
+}

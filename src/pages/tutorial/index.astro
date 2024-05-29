@@ -4,21 +4,118 @@ import Layout from '../../layouts/Layout.astro'
 const tutorials = await getCollection('tutorials')
 // const html = await tutorials.filter((tuts) => tuts.slug.includes('html'))
 const html = await getCollection('tutorials', ({ data }) => {
-  return data.category == 'HTML'
-});
-console.log(html.length)
+	return data.category == 'HTML'
+})
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
 ---
 
 <Layout title="ডেভবাংলা">
 	<div class="mxw pt-24">
-		<ul>
-			{
-				html.map((tuts) => (
-					<li>
-						<a href=`${tuts.slug}`>{tuts.slug}</a>
-					</li>
-				))
-			}
-		</ul>
+		<section class="px-4 py-16 dark:bg-background">
+			<div class="container mx-auto">
+				<h2 class="mb-8 text-3xl font-bold">যেইটা শিখতে চান সিলেক্ট করুন</h2>
+
+				<div class="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					<a href="html/what-is-html">
+						<Card className=" hover:cursor-pointer ">
+							<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="#0F2404"
+									stroke-width="2"
+									class="lucide lucide-braces"
+									><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+									></path><path
+										d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+									></path></svg
+								>
+								<p>এইচটিএমএল (HTML)</p>
+							</CardContent>
+						</Card>
+					</a>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+					<Card className="">
+						<CardContent className="flex items-center  gap-3 p-0 px-6 py-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="#0F2404"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-braces"
+								><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"
+								></path><path
+									d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"
+								></path></svg
+							>
+							<p>এইচটিএমএল (HTML)</p>
+						</CardContent>
+					</Card>
+				</div>
+			</div>
+		</section>
 	</div>
 </Layout>
