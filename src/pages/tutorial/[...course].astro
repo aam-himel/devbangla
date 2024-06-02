@@ -1,7 +1,7 @@
 ---
 import Prose from '@/components/Prose.astro'
 import Layout from '../../layouts/Layout.astro'
-import { htmlCourse } from '@/utils/menuitems'
+import { HTML, CSS } from '@/utils/menuitems'
 import { getCollection } from 'astro:content'
 import OnThisPage from '@/components/OnThisPage.astro'
 export async function getStaticPaths() {
@@ -18,8 +18,18 @@ const { entry } = Astro.props
 const { Content, headings } = await entry.render()
 
 const pathname = new URL(Astro.request.url).pathname
-const currentPath = pathname.slice(1)
-console.log(currentPath)
+
+// Match currentPath with categories
+const categoryMap = {
+	html: HTML,
+	css: CSS
+}
+
+const currentCategory = entry.data.category.toLowerCase()
+const currentCourse = categoryMap[currentCategory] || []
+
+let currentPath = pathname.slice(1)
+currentPath = currentPath.split('/')[2]
 ---
 
 <Layout title="ডেভবাংলা">
@@ -32,7 +42,7 @@ console.log(currentPath)
 				<h2 class="py-3 ps-3 text-xl font-bold">এইচটিএমএল (HTML)</h2>
 				<ul class="outer-list p-1">
 					{
-						htmlCourse.map((section) => (
+						currentCourse.map((section) => (
 							<li class=" mb-3">
 								<details open>
 									<summary class="flex items-center justify-between pe-0.5 ps-0.5">
@@ -53,7 +63,10 @@ console.log(currentPath)
 									<ul class="">
 										{section.data.map((item) => (
 											<li class="border-s">
-												<a href={item.slug} class="text-sm">
+												<a
+													href={item.slug}
+													class={`text-sm ${currentPath === item.slug ? 'active' : ''}`}
+												>
 													<span class="">{item.text}</span>
 												</a>
 											</li>
@@ -71,11 +84,12 @@ console.log(currentPath)
 		<div class="main__section flex">
 			<!-- content section -->
 			<main class="content__sec border-e">
-				<div class="border-b py-8">
+				<!-- <div class="border-b py-8">
 					<h2 class="content__main content__title text-2xl font-semibold capitalize lg:text-4xl">
 						Main
 					</h2>
-				</div>
+				</div> -->
+				<div class="pt-6"></div>
 
 				<div class="content__main sl-container pt-6">
 					<Prose>

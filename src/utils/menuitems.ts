@@ -12,7 +12,7 @@ interface MenuMain {
 	html: MenuSection[]
 }
 
-const htmlCourse: MenuSection[] = [
+const HTML: MenuSection[] = [
 	{
 		title: 'Basics',
 		order: 1,
@@ -97,5 +97,20 @@ const htmlCourse: MenuSection[] = [
 		]
 	}
 ]
+const CSS: MenuSection[] = [
+	{
+		title: 'CSS',
+		order: 1,
+		data: [
+			{ text: 'Basics', slug: 'what-is-html' },
+			{ text: 'Paragraphs', slug: 'paragraphs' },
+			{ text: 'Headings', slug: 'html-headings' },
+			{ text: 'Comments', slug: 'html-comments' },
+			{ text: 'Links', slug: 'html-links' },
+			{ text: 'Images', slug: 'html-images' },
+			{ text: 'Formatting', slug: 'html-formatting' }
+		]
+	}
+]
 
-export { htmlCourse }
+export { HTML, CSS }
